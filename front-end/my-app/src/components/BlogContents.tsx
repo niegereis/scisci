@@ -4,7 +4,7 @@ import { BlogContentProps } from '@/types/types';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 
-const BlogContent: React.FC<BlogContentProps> = ({ blog }) => {
+const BlogContent = ({ blog } : BlogContentProps) => {
   if (!blog) {
     return (
       <div className="w-full pb-10 bg-[#f9f9f9]">

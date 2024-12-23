@@ -6,7 +6,7 @@ import close from '../assets/close.svg';
 import logo from '../assets/logo-scisci.png';  
 import '../styles/globals.css'
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
   const [togle, setTogle] = useState<boolean>(false);
 
   const handClick = (): void => setTogle(!togle);

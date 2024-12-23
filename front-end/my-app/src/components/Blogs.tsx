@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { BlogsProps } from '@/types/types';
 
-const Blogs: React.FC<BlogsProps> = ({ blogs }) => {
+const Blogs = ({ blogs } : BlogsProps)  => {
   console.log('Blogs:', blogs);
   if (!Array.isArray(blogs.data) || blogs.data.length === 0) {
     return <p>Não há blogs disponíveis no momento.</p>;

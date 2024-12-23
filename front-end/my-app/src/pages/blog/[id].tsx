@@ -1,9 +1,7 @@
-// pages/blog/[id].tsx
-
 import React from 'react';
 import { useRouter } from 'next/router';
 import useFetch from '../../hooks/useFetch';
-import BlogContentPage from '../../components/BlogContentPage'; // Certifique-se de que este caminho esteja correto
+import BlogContentPage from '../../components/BlogContentPage'; 
 import { Blog } from '@/types/types';
 
 const BlogContent = () => {

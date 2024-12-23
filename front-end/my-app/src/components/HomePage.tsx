@@ -6,7 +6,7 @@ import Footer from './Footer';
 import { BlogsProps } from '@/types/types';
 
 
-const HomePage: React.FC<BlogsProps> = ({ blogs }) => {
+const HomePage = ({ blogs } : BlogsProps) => {
   return (
     <div>
       <NavBar />

@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import BlogContent from '../components/BlogContents';
 import { BlogsProps } from '@/types/types';
 
-const BlogContentPage: React.FC<BlogsProps> = ({ blogs, blogId}) => {
+const BlogContentPage = ({ blogs, blogId} : BlogsProps) => {
   const blog = blogs.data.find((blog) => blog.id === blogId) || null;
 
   return (

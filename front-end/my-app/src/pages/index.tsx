@@ -1,9 +1,7 @@
-
 import React from 'react';
 import useFetch from '../hooks/useFetch';
 import { Blog } from '@/types/types';
 import HomePage from '../components/HomePage';
-import { useEffect } from 'react';
 interface ApiResponse {
   data: Blog[];
 }

@@ -8,7 +8,7 @@ import {
   FaTwitch,
 } from 'react-icons/fa';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="w-full bg-[#02044A] text-gray py-8 px-2">
       <section className="text-white max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b-2 border-gray-600 py-4">
