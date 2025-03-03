@@ -1,17 +1,26 @@
+export interface AuthorImage {
+    url: string;
+}
 
 export interface Author {
     id: number;
+    documentId: string;
     authorName: string;
-    authorImage: { url: string };
     authorDescription: string;
+    authorImage: AuthorImage;
+}
+
+export interface CoverImage {
+    url: string;
 }
 
 export interface Blog {
     id: number;
-    coverImage: { url: string };
+    documentId: string;
     articleTitle: string;
     blogDescripition: string;
     blogContent: any;
+    coverImage: CoverImage;
     author: Author;
 }
 
