@@ -369,6 +369,40 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutProjectAboutProject
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'about_projects';
+  info: {
+    description: '';
+    displayName: 'About Project';
+    pluralName: 'about-projects';
+    singularName: 'about-project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutProjectDescription: Schema.Attribute.Blocks;
+    aboutProjectImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    aboutProjectTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-project.about-project'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -395,6 +429,10 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sci_sci_projects: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::sci-sci-project.sci-sci-project'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -429,6 +467,49 @@ export interface ApiBlogArticleBlogArticle extends Struct.CollectionTypeSchema {
       'api::blog-article.blog-article'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sci_sci_project: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::sci-sci-project.sci-sci-project'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSciSciProjectSciSciProject
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sci_sci_projects';
+  info: {
+    description: '';
+    displayName: 'SciSci Project';
+    pluralName: 'sci-sci-projects';
+    singularName: 'sci-sci-project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    authors: Schema.Attribute.Relation<'manyToMany', 'api::author.author'>;
+    blog_articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-article.blog-article'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sci-sci-project.sci-sci-project'
+    > &
+      Schema.Attribute.Private;
+    projectDescription: Schema.Attribute.Blocks;
+    projectImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    projectTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -945,8 +1026,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-project.about-project': ApiAboutProjectAboutProject;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-article.blog-article': ApiBlogArticleBlogArticle;
+      'api::sci-sci-project.sci-sci-project': ApiSciSciProjectSciSciProject;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -32,7 +32,7 @@ async function getProjectInfo() {
 }
 
 async function HomePage({ blogs }: BlogsProps) {
-  const infos = await getProjectInfo();
+  const infos: AboutProject = await getProjectInfo();
   return (
     <div className="bg-[#f9f9f9]">
       <section className="shadow-md rounded-xl mb-8">

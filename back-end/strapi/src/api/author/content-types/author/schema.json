@@ -26,6 +26,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "sci_sci_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sci-sci-project.sci-sci-project",
+      "inversedBy": "authors"
     }
   }
 }

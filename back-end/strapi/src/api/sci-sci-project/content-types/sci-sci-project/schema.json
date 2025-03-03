@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sci_sci_projects",
+  "info": {
+    "singularName": "sci-sci-project",
+    "pluralName": "sci-sci-projects",
+    "displayName": "SciSci Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "projectTitle": {
+      "type": "string"
+    },
+    "projectDescription": {
+      "type": "blocks"
+    },
+    "projectImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "mappedBy": "sci_sci_projects"
+    },
+    "blog_articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-article.blog-article",
+      "mappedBy": "sci_sci_project"
+    }
+  }
+}

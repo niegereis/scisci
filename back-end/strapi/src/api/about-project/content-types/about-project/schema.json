@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_projects",
+  "info": {
+    "singularName": "about-project",
+    "pluralName": "about-projects",
+    "displayName": "About Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutProjectTitle": {
+      "type": "string"
+    },
+    "aboutProjectDescription": {
+      "type": "blocks"
+    },
+    "aboutProjectImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

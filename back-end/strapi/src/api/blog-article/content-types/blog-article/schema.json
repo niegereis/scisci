@@ -36,6 +36,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::author.author"
+    },
+    "sci_sci_project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sci-sci-project.sci-sci-project",
+      "inversedBy": "blog_articles"
     }
   }
 }
