@@ -1,8 +1,7 @@
-// app/layout.tsx
 import React from "react";
 import "./globals.css";
-import NavBar from "./components/NavBar"; // Importa a Navbar
-import Footer from "./components/Footer"; // Importa o Footer
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "SciSci Project",
@@ -23,10 +22,8 @@ export default function RootLayout({
         <title>{metadata.title}</title>
       </head>
       <body className="bg-gray-100 text-gray-900">
-        <NavBar /> {/* Navbar global para todas as páginas */}
-        <main className="min-h-screen">{children}</main>{" "}
-        {/* Conteúdo da página */}
-        <Footer /> {/* Footer global para todas as páginas */}
+        <NavBar />
+        <main className="min-h-screen">{children}</main> <Footer />
       </body>
     </html>
   );

@@ -1,19 +1,8 @@
 import React from "react";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import { Author } from "@/types/types";
+import { Author, ProjectContentProps } from "@/types/types";
 import { Blog } from "@/types/types";
 import Link from "next/link";
-interface ProjectContentProps {
-  project: {
-    projectTitle: string;
-    projectDescription: any;
-    projectImage: {
-      url: string;
-    };
-    authors: Author[];
-    blog_articles: Blog[];
-  };
-}
 
 const ProjectsContent = ({ project }: ProjectContentProps) => {
   if (!project) {

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaUserCircle } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -24,6 +24,14 @@ const Footer = () => {
               aria-label="Instagram"
             >
               <FaInstagram />
+            </a>
+
+            <a
+              href="#"
+              className="hover:text-gray-300 transition duration-300"
+              aria-label="Login"
+            >
+              <FaUserCircle />
             </a>
           </nav>
         </div>

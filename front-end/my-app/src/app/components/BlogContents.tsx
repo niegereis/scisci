@@ -1,10 +1,6 @@
 import React from "react";
-import { Blog } from "@/types/types";
+import { BlogContentProps } from "@/types/types";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-
-interface BlogContentProps {
-  blog: Blog;
-}
 
 const BlogContent = ({ blog }: BlogContentProps) => {
   if (!blog) {

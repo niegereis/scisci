@@ -38,3 +38,54 @@ export interface BlogsProps {
 export interface BlogContentProps {
     blog: Blog | null;
 }
+
+export interface Author {
+    id: number;
+    authorName: string;
+    academicStatus: string;
+}
+
+export interface Publication {
+    id: number;
+    academicPublicationTitle: string;
+    academicPublicationJornal: string;
+    academicPublicationLink: string;
+    academicPublicationYear: string;
+    authors: Author[];
+}
+
+export interface ProjectContentProps {
+    project: {
+        projectTitle: string;
+        projectDescription: any;
+        projectImage: {
+            url: string;
+        };
+        authors: Author[];
+        blog_articles: Blog[];
+    };
+}
+
+export interface Projects {
+    id: number;
+    projectTitle: string;
+    projectDescription: string;
+    projectImage: {
+        url: string;
+    };
+}
+
+
+export interface ProjectPostPageProps {
+    params: { id: string };
+}
+
+export interface TeamMembers {
+    id: number;
+    authorName: string;
+    authorDescription: string;
+    academicStatus: "Professor" | "Aluno" | "mestrando" | "doutorando";
+    authorImage: {
+        url: string;
+    };
+}

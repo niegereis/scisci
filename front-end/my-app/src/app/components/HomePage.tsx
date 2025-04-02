@@ -1,10 +1,6 @@
 import React from "react";
-import NavBar from "./NavBar";
 import Blogs from "./Blogs";
-import Footer from "./Footer";
 import { BlogsProps } from "@/types/types";
-import Image from "next/image";
-import banner from "../../assets/banner.jpg";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 interface AboutProject {

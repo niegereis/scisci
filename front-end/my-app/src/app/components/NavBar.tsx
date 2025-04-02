@@ -5,7 +5,6 @@ import menu from "../../assets/menu.svg";
 import close from "../../assets/close.svg";
 import logo from "../../assets/logo-scisci.png";
 import "../globals.css";
-import Link from "next/link";
 
 const NavBar = () => {
   const [togle, setTogle] = useState<boolean>(false);
@@ -37,15 +36,11 @@ const NavBar = () => {
             <li>
               <a href="/Publications">Publicações</a>
             </li>
+            <li>
+              <a href="/AcademicPublications">Produção Acadêmica</a>
+            </li>
           </ul>
         </nav>
-
-        <div className="hidden md:flex sm:mr-10 md:mr-10">
-          <button className="border-none bg-transparent text-black mr-4">
-            Login
-          </button>
-          <button className="px-8 py-3">Sign Up</button>
-        </div>
 
         <div className="md:hidden" onClick={handClick}>
           <Image
@@ -61,23 +56,20 @@ const NavBar = () => {
       >
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#">Projetos</a>
+            <a href="/OurProjects">Projetos</a>
           </li>
           <li>
-            <a href="#">Equipes</a>
+            <a href="/Team">Equipe</a>
           </li>
           <li>
-            <a href="#">Publicações</a>
+            <a href="/Publications">Publicações</a>
           </li>
-          <div className="flex flex-col my-4">
-            <button className="bg-transparent text-black mb-4 py-3 px-8">
-              Login
-            </button>
-            <button className="px-8 py-3">Sign Up</button>
-          </div>
+          <li>
+            <a href="/AcademicPublications">Produção Acadêmica</a>
+          </li>
         </ul>
       </nav>
     </header>

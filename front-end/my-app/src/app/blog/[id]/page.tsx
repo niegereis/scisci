@@ -1,11 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import BlogContent from "@/app/components/BlogContents";
-import { Blog } from "@/types/types";
-
-interface BlogPostPageProps {
-  params: { id: string };
-}
 
 async function getAllBlogs() {
   const res = await fetch(
@@ -23,7 +18,11 @@ async function getAllBlogs() {
   return data;
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } = params;
   const blogData = await getAllBlogs();
 

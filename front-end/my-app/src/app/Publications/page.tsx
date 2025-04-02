@@ -20,11 +20,7 @@ async function Publications() {
   return (
     <div className="bg-[#f9f9f9]">
       <section className="max-w-[1240px] mx-auto p-4">
-        <div className="flex flex-col sm:flex-row justify-between items-center ">
-          <h2 className="font-bold text-2xl sm:text-2xl ">
-            Nossas Publicações
-          </h2>
-        </div>
+        <div className="flex flex-col sm:flex-row justify-between items-center "></div>
         <Blogs blogs={blogs} />
       </section>
     </div>

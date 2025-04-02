@@ -1,15 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BlogsProps } from "@/types/types";
-
-interface Projects {
-  id: number;
-  projectTitle: string;
-  projectDescription: string;
-  projectImage: {
-    url: string;
-  };
-}
+import { Projects } from "@/types/types";
 
 async function getProjectInfo() {
   const res = await fetch(

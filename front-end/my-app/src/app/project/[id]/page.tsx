@@ -1,11 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
-
 import ProjectsContent from "@/app/components/ProjectsContent";
-
-interface ProjectPostPageProps {
-  params: { id: string };
-}
+import { ProjectPostPageProps } from "@/types/types";
 
 async function getAllProjects() {
   const res = await fetch(
