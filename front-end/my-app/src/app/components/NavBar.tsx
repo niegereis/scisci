@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import menu from "../../assets/menu.svg";
 import close from "../../assets/close.svg";
-import logo from "../../assets/logo-scisci.png";
+import logo from "../../assets/logo-teste.png";
 import "../globals.css";
 
 const NavBar = () => {
@@ -18,7 +18,7 @@ const NavBar = () => {
           <Image
             src={logo}
             alt="logo"
-            className="sm:ml-10 ss:ml-10 md-ml-3 opacity-[55%] w-full h-[25px]"
+            className="sm:ml-10 ss:ml-10 md-ml-3 opacity-[%] w-full h-[60px]"
           />
         </div>
 
