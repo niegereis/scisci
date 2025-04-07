@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "academic_publications",
+  "info": {
+    "singularName": "academic-publication",
+    "pluralName": "academic-publications",
+    "displayName": "Academic Publication",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "academicPublicationTitle": {
+      "type": "string"
+    },
+    "academicPublicationJornal": {
+      "type": "string"
+    },
+    "academicPublicationLink": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "academic_publications"
+    },
+    "academicPublicationYear": {
+      "type": "string"
+    }
+  }
+}

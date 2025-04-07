@@ -403,9 +403,44 @@ export interface ApiAboutProjectAboutProject
   };
 }
 
+export interface ApiAcademicPublicationAcademicPublication
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'academic_publications';
+  info: {
+    description: '';
+    displayName: 'Academic Publication';
+    pluralName: 'academic-publications';
+    singularName: 'academic-publication';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    academicPublicationJornal: Schema.Attribute.String;
+    academicPublicationLink: Schema.Attribute.String;
+    academicPublicationTitle: Schema.Attribute.String;
+    academicPublicationYear: Schema.Attribute.String;
+    authors: Schema.Attribute.Relation<'manyToMany', 'api::author.author'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::academic-publication.academic-publication'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
+    description: '';
     displayName: 'Author';
     pluralName: 'authors';
     singularName: 'author';
@@ -414,6 +449,11 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    academic_publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::academic-publication.academic-publication'
+    >;
+    academicStatus: Schema.Attribute.String;
     authorDescription: Schema.Attribute.Text;
     authorImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -1027,6 +1067,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-project.about-project': ApiAboutProjectAboutProject;
+      'api::academic-publication.academic-publication': ApiAcademicPublicationAcademicPublication;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-article.blog-article': ApiBlogArticleBlogArticle;
       'api::sci-sci-project.sci-sci-project': ApiSciSciProjectSciSciProject;

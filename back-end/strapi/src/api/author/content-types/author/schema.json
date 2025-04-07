@@ -4,7 +4,8 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author"
+    "displayName": "Author",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,20 +19,30 @@
       "type": "text"
     },
     "authorImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "sci_sci_projects": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::sci-sci-project.sci-sci-project",
       "inversedBy": "authors"
+    },
+    "academicStatus": {
+      "type": "string"
+    },
+    "academic_publications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::academic-publication.academic-publication",
+      "mappedBy": "authors"
     }
   }
 }
