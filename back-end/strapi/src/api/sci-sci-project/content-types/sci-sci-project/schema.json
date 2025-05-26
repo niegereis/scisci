@@ -40,6 +40,12 @@
       "relation": "oneToMany",
       "target": "api::blog-article.blog-article",
       "mappedBy": "sci_sci_project"
+    },
+    "enrollments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::enrollment.enrollment",
+      "mappedBy": "sci_sci_projects"
     }
   }
 }

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrollments",
+  "info": {
+    "singularName": "enrollment",
+    "pluralName": "enrollments",
+    "displayName": "Enrollment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "enrollments"
+    },
+    "sci_sci_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sci-sci-project.sci-sci-project",
+      "inversedBy": "enrollments"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "Professor",
+        "Aluno"
+      ],
+      "required": true
+    }
+  }
+}
