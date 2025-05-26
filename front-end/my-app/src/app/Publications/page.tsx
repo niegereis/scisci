@@ -1,6 +1,6 @@
 "use server";
 import React from "react";
-import { Blogs } from "../components";
+import Blogs from "../components/Blogs";
 async function getBlogs() {
   const res = await fetch(
     "http://localhost:1337/api/blog-articles?populate[author][populate]=authorImage&populate=coverImage",

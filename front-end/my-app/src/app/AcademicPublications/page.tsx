@@ -45,6 +45,7 @@ export default async function Publications() {
               <Link
                 href={pub.academicPublicationLink}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 inline-block bg-black text-white px-4 py-2 rounded-md text-sm"
               >
                 Acessar publicação
